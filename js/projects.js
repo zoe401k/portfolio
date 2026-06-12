@@ -201,6 +201,7 @@ export const projects = [
     tags: ["TODO: tag 1", "TODO: tag 2", "TODO: tag 3"],
     year: "2025", // TODO: confirm year
     thumbLabel: "Groundwater abstraction map preview",
+    thumbnail: "assets/img/thumb-act.jpg",
     location: { lat: 31.7917, lng: -7.0926, zoom: 6 }, // Morocco — TODO: refine to study area
     details: {
       problem: "TODO: Describe the problem this project addresses.",
