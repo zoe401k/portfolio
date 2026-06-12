@@ -114,7 +114,7 @@ export const projects = [
     tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
     year: "2025",
     thumbLabel: "Rain gauge placement",
-    image: "assets/img/stt-research-area.jpg",
+    image: "assets/img/stt-hypercube.jpg",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
