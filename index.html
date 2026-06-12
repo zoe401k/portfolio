@@ -26,18 +26,68 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <div class="container header-inner">
-        <a class="logo" href="index.html">
+      <div class="container header-inner header-inner--nav-only">
+        <a class="logo logo-home" href="index.html" aria-label="Home">
           <span class="logo-mark" aria-hidden="true">◉</span>
-          <span>Your Name</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#work">Work</a>
           <a href="#about">About</a>
+          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
+
+    <section id="about" class="section about-section">
+      <div class="about-bg" aria-hidden="true">
+        <img
+          class="about-bg-photo about-bg-photo-1"
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+          alt=""
+        />
+        <img
+          class="about-bg-photo about-bg-photo-2"
+          src="https://images.unsplash.com/photo-1614730349704-9798cac0c117?auto=format&fit=crop&w=1200&q=80"
+          alt=""
+        />
+        <img
+          class="about-bg-photo about-bg-photo-3"
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+          alt=""
+        />
+        <div class="about-bg-overlay"></div>
+      </div>
+
+      <div class="container about-section-inner">
+        <header class="about-intro">
+          <p class="about-eyebrow">GIS · Remote Sensing · Cartography</p>
+          <h2 class="about-name">Zoë DeFord</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <h3 class="about-heading">About</h3>
+            <p>
+              I travel the world seeking new ways gto see life. thru astrohysphcs, geography, and now remote sensing n GIS. what will I do next ? stay tuend to find out. 
+              Add a short bio here — your background in geography, environmental
+              science, or GIS, what kinds of problems you like to solve, and the
+              datasets or regions you work with most.
+            </p>
+          </div>
+          <aside class="skills-card">
+            <h3>Skills &amp; stack</h3>
+            <ul class="tag-list">
+              <li>QGIS / ArcGIS Pro</li>
+              <li>Python (GeoPandas, Rasterio)</li>
+              <li>Google Earth Engine</li>
+              <li>PostGIS</li>
+              <li>Mapbox / Leaflet</li>
+              <li>Remote sensing &amp; classification</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
 
     <main id="main">
       <section class="hero">
@@ -47,7 +97,7 @@
             <h1>Visualizing place, pattern, and change on Earth.</h1>
             <p class="lead">
               I build maps and geospatial analyses that turn complex spatial data
-              into clear stories — from satellite imagery and land cover to
+              into clear stories --  from satellite imagery and land cover to
               interactive web maps.
             </p>
             <div class="hero-actions">
@@ -107,35 +157,6 @@
         </div>
       </section>
 
-      <section id="about" class="section section-alt">
-        <div class="container about-grid">
-          <div>
-            <h2>About</h2>
-            <p>
-              Add a short bio here — your background in geography, environmental
-              science, or GIS, what kinds of problems you like to solve, and the
-              datasets or regions you work with most.
-            </p>
-            <p>
-              This site is a starting point: edit
-              <code>js/projects.js</code> for project content and update the copy
-              in <code>index.html</code> with your name and links.
-            </p>
-          </div>
-          <aside class="skills-card">
-            <h3>Skills &amp; stack</h3>
-            <ul class="tag-list">
-              <li>QGIS / ArcGIS Pro</li>
-              <li>Python (GeoPandas, Rasterio)</li>
-              <li>Google Earth Engine</li>
-              <li>PostGIS</li>
-              <li>Mapbox / Leaflet</li>
-              <li>Remote sensing &amp; classification</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
       <section id="contact" class="section">
         <div class="container contact-block">
           <h2>Contact</h2>
@@ -143,9 +164,9 @@
             Interested in collaborating or have a question about a project?
           </p>
           <div class="contact-links">
-            <a href="mailto:you@example.com">zoe.deford@gmail.com</a>
-            <a href="https://github.com/zoe401k"_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="www.linkedin.com/in/zoë-d-b204b91a2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:zoe.deford@gmail.com">zoe.deford@gmail.com</a>
+            <a href="https://github.com/zoe401k" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/zo%C3%AB-d-b204b91a2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </section>
@@ -153,7 +174,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> Your Name · Built for GIS visualization</p>
+        <p>© <span id="year"></span> Zoë DeFord · Built for GIS visualization</p>
       </div>
     </footer>
 
