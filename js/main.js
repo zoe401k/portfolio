@@ -69,6 +69,8 @@ function initProjectGrid() {
 
 function renderProjectCard(project) {
   const categoryLabel = categoryLabels[project.category] ?? project.category;
+  // Card thumbnail: a decorative `thumbnail` overrides the detail-page figure (`image`).
+  const thumbSrc = project.thumbnail ?? project.image;
 
   return `
     <a
@@ -77,8 +79,8 @@ function renderProjectCard(project) {
       data-category="${project.category}"
     >
       <div class="project-thumb">${
-        project.image
-          ? `<img src="${project.image}" alt="${project.title}" loading="lazy" />`
+        thumbSrc
+          ? `<img src="${thumbSrc}" alt="${project.title}" loading="lazy" />`
           : project.thumbLabel
       }</div>
       <div class="project-body">
