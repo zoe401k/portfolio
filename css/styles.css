@@ -656,6 +656,22 @@ code {
   padding-left: 1.2rem;
 }
 
+.project-content .data-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.project-content .data-list li {
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.project-content .data-list a {
+  color: var(--accent, #3dd6c6);
+}
+
 .project-links {
   display: flex;
   flex-wrap: wrap;

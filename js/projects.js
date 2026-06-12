@@ -12,12 +12,12 @@ export const projects = [
     tags: ["Landsat", "Python", "QGIS"],
     year: "2025",
     thumbLabel: "LST map preview",
-    location: { lat: 40.7128, lng: -74.006, zoom: 11 },
+    location: { lat: 29.7604, lng: -95.3698, zoom: 11 },
     details: {
       problem:
         "Houston is getting hotter. It is projected that in the next 10 years tree cover in Harris county will decrease by close to 5%, and by 2060 it is estimated to be up to 10%. Tree cover and green space are declining as they are being replaced by buildings, concrete and asphalt. This means lower instance of surfaces that absorb rain and cool surfaces. On average in the Southwest U.S, the poorest 10% of neighborhoods in an urban region were  2.2-3C hotter than the wealthiest 10% on both extreme heat days and average summer days.",
       approach: [
-        "Processed Landsat 8 out of 9 TIRS scenes and computed seasonal LST composites.",
+        "Processed Landsat 8/9 TIRS scenes and computed seasonal LST composites.",
         "Applied atmospheric correction and derived NDVI and heat index layers.",
         "Computed LST from Landsat 9 Band 10 using ArcGIS Pro Raster Calculator.",
         "Converted Kelvin → Celsius → Fahrenheit using standard coefficients.",
@@ -27,14 +27,14 @@ export const projects = [
       outcomes: [
         "Memorial Village:",
         "Tree cover - 58% ",
-        "Average temperature - 82F  (27,8 C)",
+        "Average temperature - 82F (27.8 C)",
         "Demographics - 78% white",
         "Income - >75% of households make  $100,000+ a year",
         "Quantified temperature differences between parks and adjacent blocks",
         "Delivered static maps and an interactive web viewer",
-        "Sharpstown: Tree Cover - 3%,  Average temperature -  91F (32,8 C), Demographics - 32% of residents live in poverty ,Income - 64% of households make less than $45,000 a year",
+        "Sharpstown: Tree Cover - 3%, Average temperature - 91F (32.8 C), Demographics - 32% of residents live in poverty, Income - 64% of households make less than $45,000 a year",
       ],
-      tools: ["ArcGIS, Storymaps", "Landsat 9", "USGS Earth Explorer", "Leaflet"],
+      tools: ["ArcGIS StoryMaps", "Landsat 9", "USGS Earth Explorer", "Leaflet"],
       links: [
         { label: "GitHub repo", url: "https://github.com/yourusername/example" },
         { label: "Live map", url: "#" },
@@ -50,7 +50,7 @@ export const projects = [
     tags: ["Landsat", "MODIS", "LST"],
     year: "2025",
     thumbLabel: "Urban Heat",
-    location: { lat: 46.8797, lng: -121.7269, zoom: 10 },
+    location: { lat: 52.3676, lng: 4.9041, zoom: 10 },
     details: {
       problem:
         "Urban areas, like Amsterdam, are particularly sensitive to temperature changes due to the urban heat island effect. Understanding historical land surface temperature (LST) patterns can help identify long-term climate trends and support sustainable urban planning. Satellite remote sensing provides a valuable data source for monitoring LST over time. The MODIS (Moderate Resolution Imaging Spectroradiometer) product offers daily LST measurements, which can be aggregated to monthly and annual scales to reveal seasonal and long-term variations.",
@@ -73,7 +73,7 @@ export const projects = [
         "Socioeconomic Stats: https://www.cbs.nl/en-gb",
       ],
       tools: ["GEE", "rgee", "shiny", "leaflet", "ggplot2"],
-      links: [{ label: "Project write-up", url: "#" }],
+      links: [{ label: "Project write-up (PDF)", url: "assets/reports/amsterdam-lst.pdf" }],
     },
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
         "Automated, reproducible ModelBuilder workflow submitted as .atbx toolbox",
       ],
       tools: ["ArcGIS Pro", "ModelBuilder", "ArcPy", "Spatial Analyst"],
-      links: [{ label: "Map report (PDF)", url: "#" }],
+      links: [{ label: "Map report (PDF)", url: "assets/reports/pipeline-suitability.pdf" }],
     },
   },
   {
@@ -125,7 +125,7 @@ export const projects = [
         "Results delivered as a georeferenced point layer and accompanying site access report",
       ],
       tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
-      links: [{ label: "Project report (PDF)", url: "#" }],
+      links: [{ label: "Project report (PDF)", url: "assets/reports/rain-gauge-placement.pdf" }],
     },
   },
   {
@@ -151,58 +151,54 @@ export const projects = [
         "Delivered reproducible ETL pipeline as a commented Python script with logging",
       ],
       tools: ["PostgreSQL", "Python", "pandas", "NASA Exoplanet Archive", "pgAdmin"],
-      links: [{ label: "Project report (PDF)", url: "#" }],
+      links: [{ label: "Project report (PDF)", url: "assets/reports/exoplanet-database.pdf" }],
     },
   },
   {
+    // ⚠️ TODO (Zoe): This card was accidentally copied from the "STT" rain-gauge
+    // project. Only the title is real — replace every field below with the actual
+    // details for the invasive-species project, then delete this comment.
     id: "IDHV",
     title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
     summary:
-      "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
-    category: "analysis",
-    tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
-    year: "2025",
-    thumbLabel: "Rain gauge placement",
-    location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
+      "TODO: Write a 1–2 sentence summary of this project for the homepage card.",
+    category: "remote-sensing", // TODO: confirm — drives which filter shows this card
+    tags: ["TODO: tag 1", "TODO: tag 2", "TODO: tag 3"],
+    year: "2025", // TODO: confirm year
+    thumbLabel: "Invasive species map preview",
+    location: { lat: 0, lng: 0, zoom: 5 }, // TODO: set study-area lat/lng/zoom
     details: {
-      problem:
-        "The aim of this study is to analyze optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
-      approach:
-        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximize coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+      problem: "TODO: Describe the problem this project addresses.",
+      approach: "TODO: Describe your methods, data, and workflow.",
       outcomes: [
-        "Identified 12 optimal additional gauge locations across the study catchment",
-        "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
-        "Proposed network reduces average nearest neighbor distance between gauges by 31%",
-        "Accessibility constraints eliminated 18% of candidate locations from consideration",
-        "Results delivered as a georeferenced point layer and accompanying site access report",
+        "TODO: Key result or deliverable 1",
+        "TODO: Key result or deliverable 2",
       ],
-      tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
+      tools: ["TODO: tool 1", "TODO: tool 2"],
       links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
+    // ⚠️ TODO (Zoe): This card was accidentally copied from the "STT" rain-gauge
+    // project. Only the title is real — replace every field below with the actual
+    // details for the Morocco groundwater project, then delete this comment.
     id: "ACT",
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
-      "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
-    category: "analysis",
-    tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
-    year: "2025",
-    thumbLabel: "Rain gauge placement",
-    location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
+      "TODO: Write a 1–2 sentence summary of this project for the homepage card.",
+    category: "analysis", // TODO: confirm — drives which filter shows this card
+    tags: ["TODO: tag 1", "TODO: tag 2", "TODO: tag 3"],
+    year: "2025", // TODO: confirm year
+    thumbLabel: "Groundwater abstraction map preview",
+    location: { lat: 31.7917, lng: -7.0926, zoom: 6 }, // Morocco — TODO: refine to study area
     details: {
-      problem:
-        "The aim of this study is to analyze optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
-      approach:
-        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximize coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+      problem: "TODO: Describe the problem this project addresses.",
+      approach: "TODO: Describe your methods, data, and workflow.",
       outcomes: [
-        "Identified 13 optimal additional gauge locations across the study catchment",
-        "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
-        "Proposed network reduces average nearest-neighbor distance between gauges by 31%",
-        "Accessibility constraints eliminated 18% of candidate locations from consideration",
-        "Results delivered as a georeferenced point layer and accompanying site access report",
+        "TODO: Key result or deliverable 1",
+        "TODO: Key result or deliverable 2",
       ],
-      tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
+      tools: ["TODO: tool 1", "TODO: tool 2"],
       links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },

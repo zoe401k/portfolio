@@ -40,6 +40,10 @@ function renderProject(project) {
     .map((tool) => `<li>${tool}</li>`)
     .join("");
 
+  const dataSources = (details.data ?? [])
+    .map((item) => `<li>${linkify(item)}</li>`)
+    .join("");
+
   const tags = project.tags
     .map((tag) => `<span class="chip">${tag}</span>`)
     .join("");
@@ -73,10 +77,25 @@ function renderProject(project) {
           ? `<section><h2>Tools</h2><ul>${tools}</ul></section>`
           : ""
       }
+      ${
+        dataSources
+          ? `<section><h2>Data sources</h2><ul class="data-list">${dataSources}</ul></section>`
+          : ""
+      }
     </div>
 
     ${links ? `<div class="project-links">${links}</div>` : ""}
   `;
+}
+
+// Turn bare http(s) URLs inside a data string into clickable links,
+// leaving surrounding label text (e.g. "Daily data: ") intact.
+function linkify(text) {
+  return text.replace(
+    /(https?:\/\/[^\s]+)/g,
+    (url) =>
+      `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`
+  );
 }
 
 function initProjectMap(project) {
