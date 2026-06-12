@@ -104,6 +104,16 @@ function renderProject(project) {
       }
     </div>
 
+    ${
+      project.pdf
+        ? `<section class="project-pdf">
+             <h2>${project.pdfLabel ?? "Poster"}</h2>
+             <iframe class="pdf-embed" src="${project.pdf}" title="${project.title} — PDF" loading="lazy"></iframe>
+             <a class="btn btn-ghost" href="${project.pdf}" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+           </section>`
+        : ""
+    }
+
     ${links ? `<div class="project-links">${links}</div>` : ""}
   `;
 }

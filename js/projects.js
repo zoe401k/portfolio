@@ -118,6 +118,8 @@ export const projects = [
     thumbLabel: "Rain gauge placement",
     thumbnail: "assets/img/thumb-stt.jpg",
     image: "assets/img/stt-hypercube.jpg",
+    pdf: "assets/reports/rain-gauge-placement.pdf",
+    pdfLabel: "Conference poster",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
@@ -132,7 +134,6 @@ export const projects = [
         "Results delivered as a georeferenced point layer and accompanying site access report",
       ],
       tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
-      links: [{ label: "Project report (PDF)", url: "assets/reports/rain-gauge-placement.pdf" }],
     },
   },
   {

@@ -727,6 +727,26 @@ code {
   margin-top: 1.5rem;
 }
 
+.project-pdf {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.project-pdf h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.project-pdf .pdf-embed {
+  width: 100%;
+  height: clamp(420px, 70vh, 780px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
 .loading,
 .not-found {
   color: var(--text-muted);
