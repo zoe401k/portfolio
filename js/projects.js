@@ -12,6 +12,7 @@ export const projects = [
     tags: ["Landsat", "Python", "QGIS"],
     year: "2025",
     thumbLabel: "LST map preview",
+    thumbnail: "assets/img/thumb-gis-context.jpg",
     location: { lat: 29.7604, lng: -95.3698, zoom: 11 },
     embedUrl: "https://storymaps.arcgis.com/stories/ce489e2e22ec4f99ad9da8d86ff3ccf0",
     details: {
@@ -114,6 +115,7 @@ export const projects = [
     tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
     year: "2025",
     thumbLabel: "Rain gauge placement",
+    thumbnail: "assets/img/thumb-stt.jpg",
     image: "assets/img/stt-hypercube.jpg",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
@@ -141,6 +143,7 @@ export const projects = [
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "2026",
     thumbLabel: "Exoplanet database",
+    thumbnail: "assets/img/thumb-datamanagement.jpg",
     image: "assets/img/exoplanet-erd.jpg",
     // No geographic location — this is a database project; the ER diagram is the figure.
 
@@ -172,6 +175,7 @@ export const projects = [
     tags: ["TODO: tag 1", "TODO: tag 2", "TODO: tag 3"],
     year: "2025", // TODO: confirm year
     thumbLabel: "Invasive species map preview",
+    thumbnail: "assets/img/thumb-idhv.jpg",
     location: { lat: 0, lng: 0, zoom: 5 }, // TODO: set study-area lat/lng/zoom
     details: {
       problem: "TODO: Describe the problem this project addresses.",
@@ -196,7 +200,6 @@ export const projects = [
     tags: ["TODO: tag 1", "TODO: tag 2", "TODO: tag 3"],
     year: "2025", // TODO: confirm year
     thumbLabel: "Groundwater abstraction map preview",
-    thumbnail: "assets/img/thumb-act.jpg",
     location: { lat: 31.7917, lng: -7.0926, zoom: 6 }, // Morocco — TODO: refine to study area
     details: {
       problem: "TODO: Describe the problem this project addresses.",
