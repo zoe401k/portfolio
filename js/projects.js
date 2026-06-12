@@ -17,7 +17,7 @@ export const projects = [
       problem:
         "Houston is getting hotter. It is projected that in the next 10 years tree cover in Harris county will decrease by close to 5%, and by 2060 it is estimated to be up to 10%. Tree cover and green space are declining as they are being replaced by buildings, concrete and asphalt. This means lower instance of surfaces that absorb rain and cool surfaces. On average in the Southwest U.S, the poorest 10% of neighborhoods in an urban region were  2.2-3C hotter than the wealthiest 10% on both extreme heat days and average summer days.",
       approach: [
-        "Processed Landsat 8/9 TIRS scenes and computed seasonal LST composites.",
+        "Processed Landsat 8 out of 9 TIRS scenes and computed seasonal LST composites.",
         "Applied atmospheric correction and derived NDVI and heat index layers.",
         "Computed LST from Landsat 9 Band 10 using ArcGIS Pro Raster Calculator.",
         "Converted Kelvin → Celsius → Fahrenheit using standard coefficients.",
@@ -120,7 +120,7 @@ export const projects = [
       outcomes: [
         "Identified 12 optimal additional gauge locations across the study catchment",
         "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
-        "Proposed network reduces average nearest-neighbour distance between gauges by 31%",
+        "Proposed network reduces average nearest neighbour distance between gauges by 31%",
         "Accessibility constraints eliminated 18% of candidate locations from consideration",
         "Results delivered as a georeferenced point layer and accompanying site access report",
       ],
@@ -154,6 +154,58 @@ export const projects = [
       links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
+  {
+    id: "IDHV",
+    title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
+    summary:
+      "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
+    category: "analysis",
+    tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
+    year: "2025",
+    thumbLabel: "Rain gauge placement",
+    location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
+    details: {
+      problem:
+        "The aim of this study is to analyse optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
+      approach:
+        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximise coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+      outcomes: [
+        "Identified 12 optimal additional gauge locations across the study catchment",
+        "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
+        "Proposed network reduces average nearest neighbour distance between gauges by 31%",
+        "Accessibility constraints eliminated 18% of candidate locations from consideration",
+        "Results delivered as a georeferenced point layer and accompanying site access report",
+      ],
+      tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
+      links: [{ label: "Project report (PDF)", url: "#" }],
+    },
+  },
+  {
+    id: "ACT",
+    title: "Ground Water Abstraction Calculations in Morocco",
+    summary:
+      "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
+    category: "analysis",
+    tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
+    year: "2025",
+    thumbLabel: "Rain gauge placement",
+    location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
+    details: {
+      problem:
+        "The aim of this study is to analyse optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
+      approach:
+        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximise coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+      outcomes: [
+        "Identified 13 optimal additional gauge locations across the study catchment",
+        "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
+        "Proposed network reduces average nearest-neighbour distance between gauges by 31%",
+        "Accessibility constraints eliminated 18% of candidate locations from consideration",
+        "Results delivered as a georeferenced point layer and accompanying site access report",
+      ],
+      tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
+      links: [{ label: "Project report (PDF)", url: "#" }],
+    },
+  },
 ];
 
 export const categoryLabels = {
@@ -167,3 +219,4 @@ export const categoryLabels = {
 export function getProjectById(id) {
   return projects.find((project) => project.id === id);
 }
+
