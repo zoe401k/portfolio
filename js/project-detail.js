@@ -55,8 +55,28 @@ function renderProject(project) {
       <p class="summary">${project.summary}</p>
     </header>
 
-    <div id="project-map" aria-label="Project location map"></div>
-    <p class="map-caption">Project study area · ${project.year}</p>
+    ${
+      project.image
+        ? `<figure class="project-figure">
+             <img src="${project.image}" alt="${project.title}" loading="lazy" />
+             <figcaption class="map-caption">${project.title} · ${project.year}</figcaption>
+           </figure>`
+        : project.embedUrl
+        ? `<figure class="project-embed">
+             <iframe
+               src="${project.embedUrl}"
+               title="${project.title} — interactive story map"
+               loading="lazy"
+               allowfullscreen
+               allow="geolocation"
+             ></iframe>
+             <figcaption class="map-caption">Interactive story map · ${project.year}</figcaption>
+           </figure>`
+        : project.location
+        ? `<div id="project-map" aria-label="Project location map"></div>
+           <p class="map-caption">Project study area · ${project.year}</p>`
+        : ""
+    }
 
     <div class="project-content">
       <section>

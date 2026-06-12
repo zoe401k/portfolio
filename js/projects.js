@@ -13,6 +13,7 @@ export const projects = [
     year: "2025",
     thumbLabel: "LST map preview",
     location: { lat: 29.7604, lng: -95.3698, zoom: 11 },
+    embedUrl: "https://storymaps.arcgis.com/stories/ce489e2e22ec4f99ad9da8d86ff3ccf0",
     details: {
       problem:
         "Houston is getting hotter. It is projected that in the next 10 years tree cover in Harris county will decrease by close to 5%, and by 2060 it is estimated to be up to 10%. Tree cover and green space are declining as they are being replaced by buildings, concrete and asphalt. This means lower instance of surfaces that absorb rain and cool surfaces. On average in the Southwest U.S, the poorest 10% of neighborhoods in an urban region were  2.2-3C hotter than the wealthiest 10% on both extreme heat days and average summer days.",
@@ -37,7 +38,7 @@ export const projects = [
       tools: ["ArcGIS StoryMaps", "Landsat 9", "USGS Earth Explorer", "Leaflet"],
       links: [
         { label: "GitHub repo", url: "https://github.com/yourusername/example" },
-        { label: "Live map", url: "#" },
+        { label: "Open full story map ↗", url: "https://storymaps.arcgis.com/stories/ce489e2e22ec4f99ad9da8d86ff3ccf0" },
       ],
     },
   },
@@ -85,6 +86,7 @@ export const projects = [
     tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "2025",
     thumbLabel: "Pipeline suitability cost raster",
+    image: "assets/img/geotools-pipeline.jpg",
     location: { lat: 51.8833, lng: 5.6167, zoom: 12 },
     details: {
       problem:
@@ -111,6 +113,7 @@ export const projects = [
     tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
     year: "2025",
     thumbLabel: "Rain gauge placement",
+    image: "assets/img/stt-research-area.jpg",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
@@ -137,7 +140,10 @@ export const projects = [
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "2026",
     thumbLabel: "Exoplanet database",
-    location: { lat: 42.3601, lng: -71.0589, zoom: 9 },
+    // No geographic location — this is a database project. Drop in a figure instead:
+    // TODO (Zoe): export the entity-relationship diagram (or a results chart) and set
+    //   image: "assets/img/exoplanet-erd.jpg"   ← shows as the card thumb + detail figure
+
     details: {
       problem:
         "NASA's exoplanet archive aggregates data from dozens of observatories and detection methods, resulting in a sprawling dataset with inconsistent formatting, redundant entries, and missing values that hinder comparative habitability analysis.",

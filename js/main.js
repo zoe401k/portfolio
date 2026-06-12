@@ -76,7 +76,11 @@ function renderProjectCard(project) {
       href="project.html?id=${encodeURIComponent(project.id)}"
       data-category="${project.category}"
     >
-      <div class="project-thumb">${project.thumbLabel}</div>
+      <div class="project-thumb">${
+        project.image
+          ? `<img src="${project.image}" alt="${project.title}" loading="lazy" />`
+          : project.thumbLabel
+      }</div>
       <div class="project-body">
         <div class="project-meta">
           <span class="chip">${categoryLabel}</span>
