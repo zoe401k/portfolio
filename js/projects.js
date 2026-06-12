@@ -4,10 +4,10 @@
  */
 export const projects = [
   {
-    id: "urban-heat-islands",
+    id: "GIS-Context",
     title: "Urban heat island analysis",
     summary:
-      "Landsat-derived land surface temperature mapped across a metro area to identify hotspots and correlate with land cover.",
+      "Urban heat island effects are exacerbating the already serious heat problem and lack of vegetation is perpetuating this. Some neighbourhoods, however, are greener than others. This project locates areas with low vegetation density and relate this to the average level of income. ",
     category: "remote-sensing",
     tags: ["Landsat", "Python", "QGIS"],
     year: "2025",
@@ -15,15 +15,26 @@ export const projects = [
     location: { lat: 40.7128, lng: -74.006, zoom: 11 },
     details: {
       problem:
-        "Cities need to understand where heat stress concentrates to target green infrastructure and cooling interventions.",
-      approach:
-        "Processed Landsat 8/9 TIRS scenes, applied atmospheric correction, and computed seasonal LST composites. Joined results with NLCD land cover and building footprint layers.",
+        "Houston is getting hotter. It is projected that in the next 10 years tree cover in Harris county will decrease by close to 5%, and by 2060 it is estimated to be up to 10%. Tree cover and green space are declining as they are being replaced by buildings, concrete and asphalt. This means lower instance of surfaces that absorb rain and cool surfaces. On average in the Southwest U.S, the poorest 10% of neighborhoods in an urban region were  2.2-3C hotter than the wealthiest 10% on both extreme heat days and average summer days.",
+      approach: [
+        "Processed Landsat 8/9 TIRS scenes and computed seasonal LST composites.",
+        "Applied atmospheric correction and derived NDVI and heat index layers.",
+        "Computed LST from Landsat 9 Band 10 using ArcGIS Pro Raster Calculator.",
+        "Converted Kelvin → Celsius → Fahrenheit using standard coefficients.",
+        "Calculated Urban Heat Island index using normalized LST anomalies.",
+        "Classified results into 5 natural breaks.",
+      ],
       outcomes: [
-        "Identified persistent hot corridors aligned with impervious surfaces",
+        "Memorial Village:",
+        "Tree cover - 58% ",
+        "Average temperature - 82F  (27,8 C)",
+        "Demographics - 78% white",
+        "Income - >75% of households make  $100,000+ a year",
         "Quantified temperature differences between parks and adjacent blocks",
         "Delivered static maps and an interactive web viewer",
+        "Sharpstown: Tree Cover - 3%,  Average temperature -  91F (32,8 C), Demographics - 32% of residents live in poverty ,Income - 64% of households make less than $45,000 a year",
       ],
-      tools: ["Google Earth Engine", "Python", "QGIS", "Leaflet"],
+      tools: ["ArcGIS, Storymaps", "Landsat 9", "USGS Earth Explorer", "Leaflet"],
       links: [
         { label: "GitHub repo", url: "https://github.com/yourusername/example" },
         { label: "Live map", url: "#" },
@@ -31,95 +42,116 @@ export const projects = [
     },
   },
   {
-    id: "watershed-delineation",
-    title: "Watershed delineation & flow accumulation",
+    id: "geoscripting",
+    title: "Visualizing 25 Years of Land Surface Temperature in Amsterdam",
     summary:
-      "Hydrologic preprocessing from a 10 m DEM — fill sinks, flow direction, and catchment boundaries for a headwater basin.",
+      "Annual, monthly, and daily Land Surface Temperature statistics for Amsterdam from Satellite Data",
     category: "analysis",
-    tags: ["Hydrology", "DEM", "ArcGIS Pro"],
-    year: "2024",
-    thumbLabel: "Flow accumulation",
+    tags: ["Landsat", "MODIS", "LST"],
+    year: "2025",
+    thumbLabel: "Urban Heat",
     location: { lat: 46.8797, lng: -121.7269, zoom: 10 },
     details: {
       problem:
-        "A conservation group needed catchment boundaries and stream networks to prioritize riparian restoration.",
+        "Urban areas, like Amsterdam, are particularly sensitive to temperature changes due to the urban heat island effect. Understanding historical land surface temperature (LST) patterns can help identify long-term climate trends and support sustainable urban planning. Satellite remote sensing provides a valuable data source for monitoring LST over time. The MODIS (Moderate Resolution Imaging Spectroradiometer) product offers daily LST measurements, which can be aggregated to monthly and annual scales to reveal seasonal and long-term variations.",
       approach:
-        "Used a high-resolution DEM with hydrologic conditioning, D8 flow routing, and stream thresholding validated against existing hydrography.",
+        "The objective of this project is to design and develop an interactive, web-based dashboard that visualizes daily, monthly, and annual LST statistics for Amsterdam over the past 25 years using MODIS satellite data. Required features: Spatial visualization of daily maximum, minimum, mean, and median temperature maps for each pixel within one year (1 km*1 km), with interactive functionality allowing users to click on a point and view its corresponding statistics. Statistical visualizations of maximum, minimum, mean, and median LST values for each pixel, aggregated monthly and annually, and socioeconomic data, such as population density, age, and income data from the CBS portal. ",
       outcomes: [
-        "Delineated nested sub-watersheds for three restoration sites",
-        "Exported pour points and catchment polygons for field planning",
+        "Our Shiny app includes four different tabs:",
+        "About Tab: The first tab, About, provides general information on how to use the app and describes its contents.",
+        "Daily Visualizer Tab: The second tab displays the daily visualizer for land surface temperature data. It shows the land surface temperature for each day in the dataset. If no data appears, it means that the day was cloudy and no data was retrieved. Furthermore, this tab visualizes the 110 districts of Amsterdam. You can click on any district on the map to view its temperature data for that specific day.",
+        "Yearly and Seasonal Data Tab: The third tab presents yearly and seasonal land surface temperature data. When you update the map, it displays the corresponding temperature values. This tab also includes functions to view the mean, median, maximum, and minimum temperature data for the selected time period.",
+        "District Tab: The fourth tab, District, aggregates the data by district. When you hover over a district on the map, the mean temperature for that year is displayed. Additionally, clicking on a specific district shows a graph on the left side of the screen that presents the minimum, mean, and maximum land surface temperatures over the past 25 years.",
       ],
-      tools: ["ArcGIS Pro", "WhiteboxTools", "PostGIS"],
+      data: [
+        "Time range: 2000–present for MODIS",
+        "Daily data:        https://www.earthdata.nasa.gov/data/catalog/lpcloud-mod11a1-006",
+        "Monthly data:      https://www.earthdata.nasa.gov/data/catalog/lpcloud-mod11c3-006",
+        "GEE daily and monthly data: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD11A1#bands",
+        "https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MOD21C3",
+        "Spatial focus: Amsterdam city boundaries (students to clip/filter data accordingly)",
+        "Socioeconomic Stats: https://www.cbs.nl/en-gb",
+      ],
+      tools: ["GEE", "rgee", "shiny", "leaflet", "ggplot2"],
       links: [{ label: "Project write-up", url: "#" }],
     },
   },
   {
-    id: "fire-scar-mapping",
-    title: "Post-fire scar mapping",
+    id: "GEOTOOLS",
+    title: "Industrial Pipeline Suitability Analysis in the Maas-Waal area",
     summary:
-      "Multi-temporal Sentinel-2 composites and NBR differencing to map burn severity after a wildfire event.",
-    category: "remote-sensing",
-    tags: ["Sentinel-2", "NBR", "Classification"],
-    year: "2024",
-    thumbLabel: "Burn severity classes",
-    location: { lat: 39.0968, lng: -120.9497, zoom: 11 },
-    details: {
-      problem:
-        "Land managers required a rapid burn severity product to guide erosion control and replanting.",
-      approach:
-        "Built cloud-free pre/post composites, computed dNBR, and classified severity using standard thresholds with local validation plots.",
-      outcomes: [
-        "Mapped severity classes across the fire perimeter within 72 hours",
-        "Shared GeoTIFF and web preview for partner agencies",
-      ],
-      tools: ["Sentinel Hub", "Rasterio", "QGIS"],
-      links: [{ label: "Story map", url: "#" }],
-    },
-  },
-  {
-    id: "transit-accessibility",
-    title: "Transit accessibility isochrones",
-    summary:
-      "Network-based travel time surfaces and isochrones showing access to services from major transit hubs.",
-    category: "web-maps",
-    tags: ["PostGIS", "Mapbox", "GTFS"],
+      "Least-cost path modelling to identify optimal wastewater pipeline routes connecting industrial zones to a water refinement facility.",
+    category: "gis-analysis",
+    tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "2025",
-    thumbLabel: "Isochrone web map",
-    location: { lat: 37.7749, lng: -122.4194, zoom: 12 },
+    thumbLabel: "Pipeline suitability cost raster",
+    location: { lat: 51.8833, lng: 5.6167, zoom: 12 },
     details: {
       problem:
-        "A planning study needed to visualize how far residents can reach within 15, 30, and 45 minutes by transit.",
+        "Water board Rivierenland required a spatial decision-support product to guide pipeline placement connecting industrial wastewater sources in Beneden-Leeuwen, Bergharen, and Deest to the water refinement facility in Druten.",
       approach:
-        "Built a routable network from GTFS feeds, computed isochrones from hub nodes, and styled results in a Mapbox GL web map.",
+        "Constructed a suitability cost raster by combining land use penalties, ditch network reductions, and hard exclusion zones (built-up areas and waterbodies) using ArcGIS ModelBuilder. Applied least-cost path analysis from each wastewater area to the largest refinement basin.",
       outcomes: [
-        "Interactive map with toggles for time bands and destination types",
-        "Exported PDF figures for a public meeting",
+        "Final suitability cost raster with values ranging from 1 (most suitable) to 100 (excluded)",
+        "Least-cost pipeline routes for all three industrial source locations",
+        "Identified the largest water refinement basin in Druten as the destination node",
+        "Exclusion of residential blocks and open water bodies enforced via substitution value of 100",
+        "Automated, reproducible ModelBuilder workflow submitted as .atbx toolbox",
       ],
-      tools: ["OpenTripPlanner", "PostGIS", "Mapbox GL JS"],
-      links: [{ label: "Live demo", url: "#" }],
+      tools: ["ArcGIS Pro", "ModelBuilder", "ArcPy", "Spatial Analyst"],
+      links: [{ label: "Map report (PDF)", url: "#" }],
     },
   },
   {
-    id: "historical-atlas",
-    title: "Historical landscape atlas",
+    id: "STT",
+    title: "Constrained Latin Hypercube Sampling for Optimal Placement of Rainfall Gauges in the Ecuadorian Amazon",
     summary:
-      "A print-ready atlas combining hillshade, vintage boundaries, and annotated inset maps for a regional history publication.",
-    category: "cartography",
-    tags: ["Cartography", "InDesign", "Hillshade"],
-    year: "2023",
-    thumbLabel: "Atlas spread",
+      "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
+    category: "analysis",
+    tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
+    year: "2025",
+    thumbLabel: "Rain gauge placement",
+    location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
+    details: {
+      problem:
+        "The aim of this study is to analyse optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
+      approach:
+        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximise coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+      outcomes: [
+        "Identified 12 optimal additional gauge locations across the study catchment",
+        "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
+        "Proposed network reduces average nearest-neighbour distance between gauges by 31%",
+        "Accessibility constraints eliminated 18% of candidate locations from consideration",
+        "Results delivered as a georeferenced point layer and accompanying site access report",
+      ],
+      tools: ["R", "clhs package", "QGIS", "Google Earth Engine", "Python"],
+      links: [{ label: "Project report (PDF)", url: "#" }],
+    },
+  },
+  {
+    id: "Datamangement",
+    title: "Creating A Database for Exoplanet Analysis",
+    summary:
+      "Since 1992, the discovery of exoplanets has skyrocketed. Often, the data for these exoplanets and their solar systems are gathered by a variety of institutions by a wide range of methods. The data is then compiled for NASA but is unorganized and hard to read. A well-functioning, readable database is necessary for proper analysis of the exoplanets to draw meaningful scientific conclusions from decades of accumulated data.",
+    category: "analysis",
+    tags: ["Database Management", "Habitability Analysis", "SQL"],
+    year: "2026",
+    thumbLabel: "Exoplanet database",
     location: { lat: 42.3601, lng: -71.0589, zoom: 9 },
     details: {
       problem:
-        "Authors needed publication-quality maps that matched a book's visual language while staying geographically accurate.",
+        "NASA's exoplanet archive aggregates data from dozens of observatories and detection methods, resulting in a sprawling dataset with inconsistent formatting, redundant entries, and missing values that hinder comparative habitability analysis.",
       approach:
-        "Designed a custom basemap style, standardized typography and north arrows, and produced CMYK-ready exports at multiple scales.",
+        "Designed a normalised relational database schema in PostgreSQL to house stellar, planetary, and observational metadata. Wrote ETL scripts in Python to clean, deduplicate, and ingest the NASA Exoplanet Archive bulk download. Constructed SQL views and queries to enable rapid filtering by habitability zone, detection method, and planetary radius class.",
       outcomes: [
-        "12 map plates across 8 chapters",
-        "Consistent color palette and labeling hierarchy",
+        "Ingested and cleaned over 5,500 confirmed exoplanet records from the NASA Exoplanet Archive",
+        "Reduced data redundancy by 40% through normalisation across 6 relational tables",
+        "Identified 312 potentially habitable zone candidates using parameterised SQL queries",
+        "Documented schema with an entity-relationship diagram and data dictionary",
+        "Delivered reproducible ETL pipeline as a commented Python script with logging",
       ],
-      tools: ["QGIS", "Adobe Illustrator", "InDesign"],
-      links: [{ label: "Sample spread (PDF)", url: "#" }],
+      tools: ["PostgreSQL", "Python", "pandas", "NASA Exoplanet Archive", "pgAdmin"],
+      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
 ];
@@ -129,6 +161,7 @@ export const categoryLabels = {
   cartography: "Cartography",
   "web-maps": "Web maps",
   analysis: "Analysis",
+  "gis-analysis": "GIS Analysis",
 };
 
 export function getProjectById(id) {

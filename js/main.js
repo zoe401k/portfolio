@@ -15,7 +15,7 @@ function initHeroMap() {
   const map = L.map(mapEl, {
     scrollWheelZoom: false,
     zoomControl: true,
-  }).setView([20, 0], 2);
+  }).setView([20, 0], 0.7);
 
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     attribution:
@@ -23,6 +23,30 @@ function initHeroMap() {
     subdomains: "abcd",
     maxZoom: 19,
   }).addTo(map);
+
+  const places = [
+    ["Seattle, Washington", 47.6062, -122.3321],
+    ["Naples, Maine", 43.9729, -70.6023],
+    ["Los Angeles, California", 34.0522, -118.2437],
+    ["Austin, Texas", 30.2672, -97.7431],
+    ["Marble Falls, Texas", 30.5780, -98.2728],
+    ["Alpine, Texas", 30.3585, -103.6620],
+    ["Utrecht, Netherlands", 52.0907, 5.1214],
+    ["Wageningen, Netherlands", 51.9692, 5.6654],
+    ["Christchurch, New Zealand", -43.5321, 172.6362]
+  ];
+  
+  places.forEach(place => {
+      L.circleMarker([place[1], place[2]], {
+          radius: 2,
+          fillColor: "#ffffff",
+          color: "#ffffff",
+          weight: 2,
+          fillOpacity: 0.6
+      })
+      .bindTooltip(place[0])
+      .addTo(map);
+  });
 
   map.on("mousemove", (event) => {
     if (!coordsEl) return;
