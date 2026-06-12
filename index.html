@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GIS and remote sensing visualization portfolio — maps, spatial analysis, and geospatial storytelling."
+    />
+    <title> Zoë DeFord · GIS & Remote Sensing </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">
+          <span class="logo-mark" aria-hidden="true">◉</span>
+          <span>Your Name</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">GIS · Remote Sensing · Cartography</p>
+            <h1>Visualizing place, pattern, and change on Earth.</h1>
+            <p class="lead">
+              I build maps and geospatial analyses that turn complex spatial data
+              into clear stories — from satellite imagery and land cover to
+              interactive web maps.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work">View projects</a>
+              <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            </div>
+            <dl class="hero-stats">
+              <div>
+                <dt>Focus</dt>
+                <dd>Remote sensing &amp; spatial analysis</dd>
+              </div>
+              <div>
+                <dt>Tools</dt>
+                <dd>QGIS · Python · Leaflet · GDAL</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="hero-map-wrap">
+            <div id="hero-map" aria-label="Interactive map preview"></div>
+            <p class="map-caption">
+              <span id="map-coords">—</span>
+              · drag to explore
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Selected work</h2>
+            <p>
+              Replace these placeholders with your own projects. Each card links
+              to a detail page you can customize.
+            </p>
+          </div>
+
+          <div class="filter-bar" role="toolbar" aria-label="Filter projects">
+            <button class="filter-btn is-active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="filter-btn" data-filter="remote-sensing" type="button">
+              Remote sensing
+            </button>
+            <button class="filter-btn" data-filter="cartography" type="button">
+              Cartography
+            </button>
+            <button class="filter-btn" data-filter="web-maps" type="button">
+              Web maps
+            </button>
+            <button class="filter-btn" data-filter="analysis" type="button">
+              Analysis
+            </button>
+          </div>
+
+          <div id="project-grid" class="project-grid"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section section-alt">
+        <div class="container about-grid">
+          <div>
+            <h2>About</h2>
+            <p>
+              Add a short bio here — your background in geography, environmental
+              science, or GIS, what kinds of problems you like to solve, and the
+              datasets or regions you work with most.
+            </p>
+            <p>
+              This site is a starting point: edit
+              <code>js/projects.js</code> for project content and update the copy
+              in <code>index.html</code> with your name and links.
+            </p>
+          </div>
+          <aside class="skills-card">
+            <h3>Skills &amp; stack</h3>
+            <ul class="tag-list">
+              <li>QGIS / ArcGIS Pro</li>
+              <li>Python (GeoPandas, Rasterio)</li>
+              <li>Google Earth Engine</li>
+              <li>PostGIS</li>
+              <li>Mapbox / Leaflet</li>
+              <li>Remote sensing &amp; classification</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact-block">
+          <h2>Contact</h2>
+          <p>
+            Interested in collaborating or have a question about a project?
+          </p>
+          <div class="contact-links">
+            <a href="mailto:you@example.com">zoe.deford@gmail.com</a>
+            <a href="https://github.com/zoe401k"_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="www.linkedin.com/in/zoë-d-b204b91a2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Your Name · Built for GIS visualization</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
