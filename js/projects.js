@@ -7,7 +7,7 @@ export const projects = [
     id: "GIS-Context",
     title: "Urban heat island analysis",
     summary:
-      "Urban heat island effects are exacerbating the already serious heat problem and lack of vegetation is perpetuating this. Some neighbourhoods, however, are greener than others. This project locates areas with low vegetation density and relate this to the average level of income. ",
+      "Urban heat island effects are exacerbating the already serious heat problem and lack of vegetation is perpetuating this. Some neighborhoods, however, are greener than others. This project locates areas with low vegetation density and relates this to the average level of income.",
     category: "remote-sensing",
     tags: ["Landsat", "Python", "QGIS"],
     year: "2025",
@@ -80,7 +80,7 @@ export const projects = [
     id: "GEOTOOLS",
     title: "Industrial Pipeline Suitability Analysis in the Maas-Waal area",
     summary:
-      "Least-cost path modelling to identify optimal wastewater pipeline routes connecting industrial zones to a water refinement facility.",
+      "Least-cost path modeling to identify optimal wastewater pipeline routes connecting industrial zones to a water refinement facility.",
     category: "gis-analysis",
     tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "2025",
@@ -114,13 +114,13 @@ export const projects = [
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
-        "The aim of this study is to analyse optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
+        "The aim of this study is to analyze optimal rain gauge placement to increase network density. Using existing sites, environmental factors, and environmental variability, the appropriate number of additional sampling locations required to represent landscape diversity was determined, while accounting for accessibility constraints.",
       approach:
-        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximise coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
+        "Conducted a principal component analysis on environmental covariates including elevation, slope, aspect, and vegetation indices derived from remote sensing data. Applied constrained Latin Hypercube Sampling (cLHS) to select new gauge locations that maximize coverage of environmental space while respecting access constraints such as road proximity and protected area boundaries.",
       outcomes: [
         "Identified 12 optimal additional gauge locations across the study catchment",
         "PCA reduced 8 environmental variables to 3 principal components explaining 84% of variance",
-        "Proposed network reduces average nearest neighbour distance between gauges by 31%",
+        "Proposed network reduces average nearest neighbor distance between gauges by 31%",
         "Accessibility constraints eliminated 18% of candidate locations from consideration",
         "Results delivered as a georeferenced point layer and accompanying site access report",
       ],
@@ -142,11 +142,11 @@ export const projects = [
       problem:
         "NASA's exoplanet archive aggregates data from dozens of observatories and detection methods, resulting in a sprawling dataset with inconsistent formatting, redundant entries, and missing values that hinder comparative habitability analysis.",
       approach:
-        "Designed a normalised relational database schema in PostgreSQL to house stellar, planetary, and observational metadata. Wrote ETL scripts in Python to clean, deduplicate, and ingest the NASA Exoplanet Archive bulk download. Constructed SQL views and queries to enable rapid filtering by habitability zone, detection method, and planetary radius class.",
+        "Designed a normalized relational database schema in PostgreSQL to house stellar, planetary, and observational metadata. Wrote ETL scripts in Python to clean, deduplicate, and ingest the NASA Exoplanet Archive bulk download. Constructed SQL views and queries to enable rapid filtering by habitability zone, detection method, and planetary radius class.",
       outcomes: [
         "Ingested and cleaned over 5,500 confirmed exoplanet records from the NASA Exoplanet Archive",
-        "Reduced data redundancy by 40% through normalisation across 6 relational tables",
-        "Identified 312 potentially habitable zone candidates using parameterised SQL queries",
+        "Reduced data redundancy by 40% through normalization across 6 relational tables",
+        "Identified 312 potentially habitable zone candidates using parameterized SQL queries",
         "Documented schema with an entity-relationship diagram and data dictionary",
         "Delivered reproducible ETL pipeline as a commented Python script with logging",
       ],
