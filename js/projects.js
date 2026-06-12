@@ -140,9 +140,8 @@ export const projects = [
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "2026",
     thumbLabel: "Exoplanet database",
-    // No geographic location — this is a database project. Drop in a figure instead:
-    // TODO (Zoe): export the entity-relationship diagram (or a results chart) and set
-    //   image: "assets/img/exoplanet-erd.jpg"   ← shows as the card thumb + detail figure
+    image: "assets/img/exoplanet-erd.jpg",
+    // No geographic location — this is a database project; the ER diagram is the figure.
 
     details: {
       problem:
