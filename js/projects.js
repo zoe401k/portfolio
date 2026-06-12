@@ -88,6 +88,7 @@ export const projects = [
     tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "2025",
     thumbLabel: "Pipeline suitability cost raster",
+    thumbnail: "assets/img/thumb-geotools.jpg",
     image: "assets/img/geotools-pipeline.jpg",
     location: { lat: 51.8833, lng: 5.6167, zoom: 12 },
     details: {
