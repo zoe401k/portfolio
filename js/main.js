@@ -6,6 +6,14 @@ if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 initHeroMap();
 initProjectGrid();
 initFilters();
+initAboutVideo();
+
+function initAboutVideo() {
+  const video = document.querySelector(".about-bg-video");
+  if (!video) return;
+  // Background video speed: 1 = normal, 0.5 = half, 0.25 = quarter
+  video.playbackRate = 0.5;
+}
 
 function initHeroMap() {
   const mapEl = document.getElementById("hero-map");
