@@ -495,12 +495,70 @@ code {
   overflow: hidden;
 }
 
+.about-stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: starsTwinkle 6s ease-in-out infinite;
+}
+
+@keyframes starsTwinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.about-bg-globe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;                 /* fades in only once the globe is live */
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.about-bg-globe.is-ready {
+  opacity: 0.45;
+}
+
+.globe-hud {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: rgba(12, 17, 23, 0.72);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.globe-hud.is-on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .about-bg-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;        /* sits above the globe so it covers it until globe loads */
 
   opacity: 0.3;      /* increase/decrease visibility */
   /*filter: blur(2px); /* optional */
