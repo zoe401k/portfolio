@@ -30,13 +30,9 @@ export const projects = [
         "IWMI DIWASA",
         "Global Hydrological Foundation Model"
       ],
-      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
-    // ⚠️ TODO (Zoe): This card was accidentally copied from the "STT" rain-gauge
-    // project. Only the title is real — replace every field below with the actual
-    // details for the invasive-species project, then delete this comment.
     id: "IDHV",
     title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
     summary:
@@ -65,7 +61,6 @@ export const projects = [
         "Orthomosaic processing tools",
         "Mobile citizen science application (geotagging + validation)"
       ],
-      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
@@ -94,7 +89,6 @@ export const projects = [
         "Delivered reproducible ETL pipeline as a commented Python script with logging",
       ],
       tools: ["PostgreSQL", "Python", "pandas", "NASA Exoplanet Archive", "pgAdmin"],
-      links: [{ label: "Project report (PDF)", url: "assets/reports/exoplanet-database.pdf" }],
     },
   },
   {
@@ -107,9 +101,8 @@ export const projects = [
     year: "January, 2026",
     thumbLabel: "Rain gauge placement",
     thumbnail: "assets/img/thumb-stt.jpg",
-    image: "assets/img/stt-hypercube.jpg",
-    pdf: "assets/reports/rain-gauge-placement.pdf",
-    pdfLabel: "Conference poster",
+    image: "assets/img/stt-poster.jpg",
+    bottomImage: "assets/img/stt-hypercube.jpg",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:

@@ -113,6 +113,15 @@ function renderProject(project) {
         : ""
     }
 
+    ${
+      project.bottomImage
+        ? `<figure class="project-figure">
+             <img src="${project.bottomImage}" alt="${project.title}" loading="lazy" />
+             <figcaption class="map-caption">${project.title} · ${project.year}</figcaption>
+           </figure>`
+        : ""
+    }
+
     ${links ? `<div class="project-links">${links}</div>` : ""}
   `;
 }
