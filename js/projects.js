@@ -257,6 +257,8 @@ export const projects = [
     tags: ["cartography", "spatial analysis", "historical GIS"],
     year: "April, 2024",
     thumbLabel: "Namhansanseong fortress map preview",
+    // Photo: Republic of Korea / Korea.net (Wikimedia Commons, CC BY-SA 2.0).
+    thumbnail: "assets/img/thumb-nhss.jpg",
     location: { lat: 37.4701, lng: 127.1904, zoom: 13 },
     embedUrl: "https://storymaps.arcgis.com/stories/65ea71fb93fa48d0b9ae6f501be497f5",
     details: {
