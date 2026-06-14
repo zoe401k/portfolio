@@ -43,6 +43,7 @@
 
     <section id="about" class="section about-section">
       <div class="about-bg" aria-hidden="true">
+        <div id="about-globe" class="about-bg-globe"></div>
         <video
           class="about-bg-video"
           autoplay
@@ -50,10 +51,8 @@
           loop
           playsinline
         >
-        <source src="assets/img/earth2.mp4" type="video/mp4">"  />
+          <source src="assets/img/earth2.mp4" type="video/mp4" />
         </video>
-      
-        
       </div>
 
       <div class="container about-section-inner">
@@ -178,6 +177,11 @@
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js"
+      integrity="sha384-fS13P48RBFel+cPUp5960AhzvtEr64LerQ00neZuM+Hi/VDxxemdQnN7IcWPYvPb"
+      crossorigin="anonymous"
     ></script>
     <script type="module" src="js/main.js"></script>
   </body>

@@ -290,9 +290,9 @@ export const projects = [
 ];
 
 export const categoryLabels = {
-  "remote-sensing": "Remote sensing",
-  "spatial-analysis": "Spatial analysis",
-  "web-mapping": "Web mapping",
+  remotesensing: "Remote Sensing",
+  spatialmodelling: "Spatial Modelling",
+  geovisualization: "Geovisualization",
 };
 
 export function getProjectById(id) {
