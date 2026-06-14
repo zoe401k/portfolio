@@ -483,6 +483,17 @@ code {
 
 /* About */
 
+/* Grouped outcomes (e.g. neighborhood breakdowns): unbulleted heading + bullets */
+.outcome-group {
+  margin-bottom: 1.25rem;
+}
+
+.outcome-title {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
 .about-section {
   position: relative;
   overflow: hidden;

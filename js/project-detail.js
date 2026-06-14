@@ -32,9 +32,12 @@ function renderProject(project) {
     )
     .join("");
 
-  const outcomes = (details.outcomes ?? [])
-    .map((item) => `<li>${item}</li>`)
-    .join("");
+  // Approach may be a single paragraph (string) or a list of steps (array).
+  const approachHtml = Array.isArray(details.approach)
+    ? `<ul>${details.approach.map((step) => `<li>${step}</li>`).join("")}</ul>`
+    : `<p>${details.approach}</p>`;
+
+  const outcomesHtml = renderOutcomes(details.outcomes);
 
   const tools = (details.tools ?? [])
     .map((tool) => `<li>${tool}</li>`)
@@ -85,13 +88,9 @@ function renderProject(project) {
       </section>
       <section>
         <h2>Approach</h2>
-        <p>${details.approach}</p>
+        ${approachHtml}
       </section>
-      ${
-        outcomes
-          ? `<section><h2>Outcomes</h2><ul>${outcomes}</ul></section>`
-          : ""
-      }
+      ${outcomesHtml}
       ${
         tools
           ? `<section><h2>Tools</h2><ul>${tools}</ul></section>`
@@ -116,6 +115,28 @@ function renderProject(project) {
 
     ${links ? `<div class="project-links">${links}</div>` : ""}
   `;
+}
+
+// Outcomes can be plain strings or grouped objects { title, items }.
+// Grouped outcomes render an unbulleted heading with bulleted points beneath
+// (e.g. the GIS-Context card's "Memorial Village" / "Sharpstown" breakdown).
+function renderOutcomes(outcomes = []) {
+  if (!outcomes || !outcomes.length) return "";
+  const grouped = outcomes.some((item) => item && typeof item === "object");
+  if (!grouped) {
+    const lis = outcomes.map((item) => `<li>${item}</li>`).join("");
+    return `<section><h2>Outcomes</h2><ul>${lis}</ul></section>`;
+  }
+  const groups = outcomes
+    .map((item) => {
+      if (item && typeof item === "object") {
+        const lis = (item.items ?? []).map((sub) => `<li>${sub}</li>`).join("");
+        return `<div class="outcome-group"><h3 class="outcome-title">${item.title}</h3><ul>${lis}</ul></div>`;
+      }
+      return `<ul><li>${item}</li></ul>`;
+    })
+    .join("");
+  return `<section><h2>Outcomes</h2>${groups}</section>`;
 }
 
 // Turn bare http(s) URLs inside a data string into clickable links,

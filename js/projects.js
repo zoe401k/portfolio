@@ -7,7 +7,7 @@ export const projects = [
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
       "This project estimates groundwater abstraction at field and aquifer scale in Morocco by combining remote sensing evapotranspiration data, crop classification, and parcel-level analysis. It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",
-    category: "analysis",
+    category: "remote-sensing",
     tags: ["groundwater", "remote sensing", "water balance"],
     year: "June, 2026",
     thumbLabel: "Groundwater abstraction map preview",
@@ -75,7 +75,7 @@ export const projects = [
     title: "Creating A Database for Exoplanet Analysis",
     summary:
       " Data for exoplanets and their solar systems are gathered by a variety of institutions by a wide range of methods. The data is then compiled for NASA but is unorganized and hard to read. A well-functioning, readable database is necessary for proper analysis of the exoplanets to draw meaningful scientific conclusions from decades of accumulated data.",
-    category: "analysis",
+    category: "spatial-analysis",
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "February, 2026",
     thumbLabel: "Exoplanet database",
@@ -104,7 +104,7 @@ export const projects = [
     title: "Constrained Latin Hypercube Sampling for Optimal Placement of Rainfall Gauges in the Ecuadorian Amazon",
     summary:
       "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
-    category: "analysis",
+    category: "spatial-analysis",
     tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
     year: "January, 2026",
     thumbLabel: "Rain gauge placement",
@@ -133,7 +133,7 @@ export const projects = [
     title: "Industrial Pipeline Suitability Analysis in Maas-Waal",
     summary:
       "Least-cost path modeling to identify optimal wastewater pipeline routes connecting industrial zones to a water refinement facility.",
-    category: "gis-analysis",
+    category: "spatial-analysis",
     tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "December, 2025",
     thumbLabel: "Pipeline suitability cost raster",
@@ -161,7 +161,7 @@ export const projects = [
     title: "Visualizing 25 Years of Land Surface Temperature in Amsterdam",
     summary:
       "Annual, monthly, and daily Land Surface Temperature statistics for Amsterdam from Satellite Data",
-    category: "analysis",
+    category: "web-mapping",
     tags: ["Landsat", "MODIS", "LST"],
     year: "November, 2025",
     thumbLabel: "Urban Heat",
@@ -187,7 +187,7 @@ export const projects = [
         "Socioeconomic Stats: https://www.cbs.nl/en-gb",
       ],
       tools: ["GEE", "rgee", "shiny", "leaflet", "ggplot2"],
-      links: [{ label: "Project write-up (PDF)", url: "assets/reports/amsterdam-lst.pdf" }],
+      links: [{ label: "Project code (GitLab)", url: "https://git.wur.nl/geoscripting-2025/staff/project/Project_Starter-The_Invisible_Futuristic_Python_Beginners" }],
     },
   },
   {
@@ -206,12 +206,18 @@ export const projects = [
       problem:
         "Houston is getting hotter. It is projected that in the next 10 years tree cover in Harris county will decrease by close to 5%, and by 2060 it is estimated to be up to 10%. Tree cover and green space are declining as they are being replaced by buildings, concrete and asphalt. This means lower instance of surfaces that absorb rain and cool surfaces. On average in the Southwest U.S, the poorest 10% of neighborhoods in an urban region were  2.2-3C hotter than the wealthiest 10% on both extreme heat days and average summer days.",
       approach: [
-        "Processed Landsat 8/9 TIRS scenes and computed seasonal LST composites.",
+        "Processed Landsat 9 Collection 2 Level-2 TIRS scenes (Surface Temperature Band 10) and computed seasonal LST composites.",
         "Applied atmospheric correction and derived NDVI and heat index layers.",
-        "Computed LST from Landsat 9 Band 10 using ArcGIS Pro Raster Calculator.",
-        "Converted Kelvin → Celsius → Fahrenheit using standard coefficients.",
-        "Calculated Urban Heat Island index using normalized LST anomalies.",
-        "Classified results into 5 natural breaks.",
+        "Built a Land Surface Temperature raster from Landsat 9 (LST Band 10) using the ArcGIS Pro Raster Calculator geoprocessing tool.",
+        "Applied the LST-in-Fahrenheit formula (Bonansea et al., 2024):",
+        "    LST(°F) = ((\"ST_B10\" × 0.00341802) + 149.0 − 273.15) × 1.8 + 32",
+        "Where the coefficients come from the scene's MTL metadata:",
+        "    • ST_B10 = Surface Temperature Band 10",
+        "    • TEMPERATURE_MULT_BAND_ST_B10 = 0.00341802 (multiplicative scale)",
+        "    • TEMPERATURE_ADD_BAND_ST_B10 = 149.0 (additive offset)",
+        "    • −273.15 converts Kelvin → Celsius; × 1.8 + 32 converts Celsius → Fahrenheit",
+        "Calculated the Urban (Surface) Heat Index from the resulting LST raster to identify surface heat hotspots.",
+        "Classified results into 5 natural breaks for visualization.",
       ],
       outcomes: [
         {
@@ -242,14 +248,51 @@ export const projects = [
       ],
     },
   },
+  {
+    id: "NHSS",
+    title: "Namhansanseong Fortress Still Stands: The Geography of Survival",
+    summary:
+      "A spatial and cartographic case study of South Korea's Namhansanseong fortress, examining how location, topography, hydrography, vegetation, and terrain combined to make one of the world's largest mountain fortresses endure centuries of sieges. The project asks how geography contributed to the longevity of the fortified city southeast of Seoul.",
+    category: "web-mapping",
+    tags: ["cartography", "spatial analysis", "historical GIS"],
+    year: "April, 2024",
+    thumbLabel: "Namhansanseong fortress map preview",
+    location: { lat: 37.4701, lng: 127.1904, zoom: 13 },
+    embedUrl: "https://storymaps.arcgis.com/stories/65ea71fb93fa48d0b9ae6f501be497f5",
+    details: {
+      problem:
+        "Namhansanseong, a UNESCO World Heritage fortress roughly 25 km southeast of Seoul, has stood intact through centuries of conflict. This project investigates the research question: how did geography contribute to the longevity of the Namhansanseong city fortress? Answering it requires untangling the interacting physical and human-geographic factors—from mountain topography and river hydrology to vegetation cover and wall geomorphology—that together formed a self-sustaining defensive system.",
+      approach: [
+        "Combined historical research and literature review with spatial analysis to evaluate geographic contributions to the fortress's endurance.",
+        "Conducted critical analysis of historical accounts, architecture, spatial data, and peer-reviewed research.",
+        "Employed cartographic analysis across topographic maps, satellite imagery, political and landmark maps, and historical maps.",
+        "Built interactive express maps in ArcGIS StoryMaps to show the route from Seoul, the river/moat path along the fortress rim, aerial tree-cover extent, and the multi-layered wall and terrain.",
+      ],
+      outcomes: [
+        "Identified location and proximity-to-capital advantages: close enough to Seoul for rapid refuge and resource flow, yet geographically isolated on a mountain (~500 m elevation) for natural fortification and surveillance.",
+        "Mapped hydrography and watershed features—the river acting as moat, drinking supply, and weapon, plus more than 80 wells and 45 lotus ponds inside the walls indicating abundant groundwater.",
+        "Documented vegetation and ecology defenses: dense planted pine and cypress forest slowing invaders and supplying self-sufficient fuel and timber for long sieges.",
+        "Characterized terrain and defilade: three wall layers following the mountain ridge, an ~11.76 km wall enclosing ~2,120,000 m², four main gates plus 16 hidden gates, and nearly 2,000 merlons angled to the slope for short- and long-range fire.",
+        "Analyzed geomorphology—lime-mortar mineralogy (quartz, mica, feldspar, clay) and strategic rock placement that resisted cannon fire and erosion—as a key factor in the wall's durability.",
+      ],
+      tools: [
+        "ArcGIS StoryMaps",
+        "Satellite and aerial imagery",
+        "Topographic, historical, and political map sources",
+        "Cartographic / spatial analysis",
+        "Literature and historical-document review",
+      ],
+      links: [
+        { label: "Open full story map ↗", url: "https://storymaps.arcgis.com/stories/65ea71fb93fa48d0b9ae6f501be497f5" },
+      ],
+    },
+  },
 ];
 
 export const categoryLabels = {
   "remote-sensing": "Remote sensing",
-  cartography: "Cartography",
-  "web-maps": "Web maps",
-  analysis: "Analysis",
-  "gis-analysis": "GIS Analysis",
+  "spatial-analysis": "Spatial analysis",
+  "web-mapping": "Web mapping",
 };
 
 export function getProjectById(id) {
