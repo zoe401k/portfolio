@@ -1,13 +1,11 @@
 export const projects = [
   {
-    // ⚠️ TODO (Zoe): This card was accidentally copied from the "STT" rain-gauge
-    // project. Only the title is real — replace every field below with the actual
-    // details for the Morocco groundwater project, then delete this comment.
+  
     id: "ACT",
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
       "This project estimates groundwater abstraction at field and aquifer scale in Morocco by combining remote sensing evapotranspiration data, crop classification, and parcel-level analysis. It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",
-    category: "remote-sensing",
+    category: "remotesensing",
     tags: ["groundwater", "remote sensing", "water balance"],
     year: "June, 2026",
     thumbLabel: "Groundwater abstraction map preview",
@@ -43,7 +41,7 @@ export const projects = [
     title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
     summary:
       "This project combines UAV imagery, machine learning, and citizen science to detect and monitor invasive plant species in the Groenlo (Achterhoek) region. It supports municipal biodiversity management by enabling early detection, validation, and mapping of invasive species through an interactive public application.",
-    category: "remote-sensing",
+    category: "remotesensing",
     tags: ["invasive species", "UAV", "citizen science"],
     year: "April, 2026",
     thumbLabel: "Invasive species map preview",
@@ -75,7 +73,7 @@ export const projects = [
     title: "Creating A Database for Exoplanet Analysis",
     summary:
       " Data for exoplanets and their solar systems are gathered by a variety of institutions by a wide range of methods. The data is then compiled for NASA but is unorganized and hard to read. A well-functioning, readable database is necessary for proper analysis of the exoplanets to draw meaningful scientific conclusions from decades of accumulated data.",
-    category: "spatial-analysis",
+    category: "spatialmodelling",
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "February, 2026",
     thumbLabel: "Exoplanet database",
@@ -104,7 +102,7 @@ export const projects = [
     title: "Constrained Latin Hypercube Sampling for Optimal Placement of Rainfall Gauges in the Ecuadorian Amazon",
     summary:
       "Rain gauges are the most widely used instrument to quantify precipitation. Precipitation strongly influences the hydrological functioning of the Ecuadorian Amazon, yet its spatio-temporal variability remains poorly understood due to the limited number of gauges.",
-    category: "spatial-analysis",
+    category: "spatialmodelling",
     tags: ["Latin Hypercube", "Constrained Sampling", "Principal Component Analysis"],
     year: "January, 2026",
     thumbLabel: "Rain gauge placement",
@@ -133,7 +131,7 @@ export const projects = [
     title: "Industrial Pipeline Suitability Analysis in Maas-Waal",
     summary:
       "Least-cost path modeling to identify optimal wastewater pipeline routes connecting industrial zones to a water refinement facility.",
-    category: "spatial-analysis",
+    category: "spatialmodelling",
     tags: ["ArcGIS Pro", "Least-Cost Path", "Suitability Analysis"],
     year: "December, 2025",
     thumbLabel: "Pipeline suitability cost raster",
@@ -161,7 +159,7 @@ export const projects = [
     title: "Visualizing 25 Years of Land Surface Temperature in Amsterdam",
     summary:
       "Annual, monthly, and daily Land Surface Temperature statistics for Amsterdam from Satellite Data",
-    category: "web-mapping",
+    category: "geovisualization",
     tags: ["Landsat", "MODIS", "LST"],
     year: "November, 2025",
     thumbLabel: "Urban Heat",
@@ -195,7 +193,7 @@ export const projects = [
     title: "Mapping Heat Inequality: Vegetation, Socioeconomics, and Urban Heat Exposure",
     summary:
       "Urban heat island effects are exacerbating the already serious heat problem and lack of vegetation is perpetuating this. Some neighborhoods, however, are greener than others. This project locates areas with low vegetation density and relates this to the average level of income.",
-    category: "remote-sensing",
+    category: "geovisualization",
     tags: ["Landsat", "Python", "QGIS"],
     year: "September, 2025",
     thumbLabel: "LST map preview",
@@ -253,7 +251,7 @@ export const projects = [
     title: "Namhansanseong Fortress Still Stands: The Geography of Survival",
     summary:
       "A spatial and cartographic case study of South Korea's Namhansanseong fortress, examining how location, topography, hydrography, vegetation, and terrain combined to make one of the world's largest mountain fortresses endure centuries of sieges. The project asks how geography contributed to the longevity of the fortified city southeast of Seoul.",
-    category: "web-mapping",
+    category: "geovisualization",
     tags: ["cartography", "spatial analysis", "historical GIS"],
     year: "April, 2024",
     thumbLabel: "Namhansanseong fortress map preview",
