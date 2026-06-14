@@ -1,4 +1,7 @@
 import { projects, categoryLabels } from "./projects.js";
+// Globe game is disabled but kept in the codebase. Re-enable the import and the
+// initGlobeGame(...) call in initAboutGlobe to turn it back on.
+// import { initGlobeGame } from "./globe-game.js";
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -15,19 +18,6 @@ function initAboutVideo() {
   // Background video speed: 1 = normal, 0.5 = half, 0.25 = quarter
   video.playbackRate = 0.5;
 }
-
-// Cities from Zoë's "Places I've lived & worked" — glow warm on the globe.
-const GLOBE_PLACES = [
-  { name: "Seattle, Washington", lat: 47.6062, lng: -122.3321 },
-  { name: "Naples, Maine", lat: 43.9729, lng: -70.6023 },
-  { name: "Los Angeles, California", lat: 34.0522, lng: -118.2437 },
-  { name: "Austin, Texas", lat: 30.2672, lng: -97.7431 },
-  { name: "Marble Falls, Texas", lat: 30.578, lng: -98.2728 },
-  { name: "Alpine, Texas", lat: 30.3585, lng: -103.662 },
-  { name: "Utrecht, Netherlands", lat: 52.0907, lng: 5.1214 },
-  { name: "Wageningen, Netherlands", lat: 51.9692, lng: 5.6654 },
-  { name: "Christchurch, New Zealand", lat: -43.5321, lng: 172.6362 },
-];
 
 const GLOBE_GEOJSON =
   "https://cdn.jsdelivr.net/gh/vasturiano/globe.gl@master/example/datasets/ne_110m_admin_0_countries.geojson";
@@ -68,16 +58,7 @@ function initAboutGlobe() {
       .hexPolygonResolution(3)
       .hexPolygonMargin(0.3)
       .hexPolygonUseDots(true)
-      .hexPolygonColor(() => "rgba(61, 214, 198, 0.6)")
-      .pointsData(GLOBE_PLACES)
-      .pointColor(() => "#f0a56e")
-      .pointAltitude(0.04)
-      .pointRadius(0.34)
-      .ringsData(GLOBE_PLACES)
-      .ringColor(() => (t) => `rgba(240, 165, 110, ${1 - t})`)
-      .ringMaxRadius(3)
-      .ringPropagationSpeed(1.2)
-      .ringRepeatPeriod(1600);
+      .hexPolygonColor(() => "rgba(61, 214, 198, 0.6)");
 
     world.globeMaterial().color.set("#0e1a24");
 
@@ -102,6 +83,9 @@ function initAboutGlobe() {
         el.classList.add("is-ready");
         if (video) video.style.display = "none";
         setupGlobeControls(world, el);
+        // Game disabled for now — code stays in js/globe-game.js.
+        // Re-enable by uncommenting the next line (and the import up top):
+        // initGlobeGame(world, el, document.getElementById("about"));
       })
       .catch((err) => {
         // Keep the video fallback; tear down the half-built globe.
@@ -122,14 +106,13 @@ function initAboutGlobe() {
 //   ↑/↓        spin speed (down past 0 reverses)
 //   ←/→        opacity
 //   shift ↑/↓  globe size (shift-up = bigger)
-//   shift ←/→  marker glow size
+// Disabled while a game round is in progress.
 function setupGlobeControls(world, el) {
   const controls = world.controls();
   const state = {
     speed: controls.autoRotateSpeed, // 0.6
     opacity: 0.45,
     altitude: 2.4, // lower = bigger globe
-    markers: 1,
   };
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
@@ -162,21 +145,15 @@ function setupGlobeControls(world, el) {
   const ARROWS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
   window.addEventListener("keydown", (e) => {
     if (!aboutVisible || !ARROWS.includes(e.key)) return;
+    if (about && about.classList.contains("is-playing")) return; // game owns the keys
     e.preventDefault();
 
-    if (e.shiftKey) {
-      // Shift ↑/↓ = globe size, Shift ←/→ = marker glow size.
-      if (e.key === "ArrowUp" || e.key === "ArrowDown") {
-        const dir = e.key === "ArrowUp" ? -0.2 : 0.2; // up = closer = bigger
-        state.altitude = clamp(state.altitude + dir, 1.4, 4);
-        world.pointOfView({ altitude: state.altitude }, 350);
-        flash(`size ${Math.round(((4 - state.altitude) / (4 - 1.4)) * 100)}%`);
-      } else {
-        const dir = e.key === "ArrowRight" ? 0.2 : -0.2;
-        state.markers = clamp(state.markers + dir, 0.2, 3);
-        world.pointRadius(0.34 * state.markers).ringMaxRadius(3 * state.markers);
-        flash(`markers ${state.markers.toFixed(1)}×`);
-      }
+    if (e.shiftKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+      // Shift ↑/↓ = globe size.
+      const dir = e.key === "ArrowUp" ? -0.2 : 0.2; // up = closer = bigger
+      state.altitude = clamp(state.altitude + dir, 1.4, 4);
+      world.pointOfView({ altitude: state.altitude }, 350);
+      flash(`size ${Math.round(((4 - state.altitude) / (4 - 1.4)) * 100)}%`);
       return;
     }
 
