@@ -4,7 +4,7 @@ export const projects = [
     id: "ACT",
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
-      "This project estimates groundwater abstraction at field and aquifer scale in Morocco by combining remote sensing evapotranspiration data, crop classification, and parcel-level analysis. It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",
+      "This project calculates groundwater abstraction via remote sensing at field and aquifer scale in Morocco by combining evapotranspiration data, crop classification, and parcel-level analysis. It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",
     category: "remotesensing",
     tags: ["groundwater", "remote sensing", "water balance"],
     year: "June, 2026",
@@ -30,9 +30,11 @@ export const projects = [
         "IWMI DIWASA",
         "Global Hydrological Foundation Model"
       ],
+      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
+   
     id: "IDHV",
     title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
     summary:
@@ -55,17 +57,18 @@ export const projects = [
       ],
       tools: [
         "DJI UAV 45MP RGB imagery",
-        "QGIS / GIS preprocessing",
+        "QGIS preprocessing",
         "Random Forest classifier",
         "Python (geospatial ML workflows)",
-        "Orthomosaic processing tools",
+        "Agisoft Metashape for Orthomosaic ",
         "Mobile citizen science application (geotagging + validation)"
       ],
+      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
     id: "Datamangement",
-    title: "Creating A Database for Exoplanet Analysis",
+    title: "Database for Exoplanet Analysis",
     summary:
       " Data for exoplanets and their solar systems are gathered by a variety of institutions by a wide range of methods. The data is then compiled for NASA but is unorganized and hard to read. A well-functioning, readable database is necessary for proper analysis of the exoplanets to draw meaningful scientific conclusions from decades of accumulated data.",
     category: "spatialmodelling",
@@ -89,6 +92,7 @@ export const projects = [
         "Delivered reproducible ETL pipeline as a commented Python script with logging",
       ],
       tools: ["PostgreSQL", "Python", "pandas", "NASA Exoplanet Archive", "pgAdmin"],
+      links: [{ label: "Project report (PDF)", url: "assets/reports/exoplanet-database.pdf" }],
     },
   },
   {
@@ -101,8 +105,9 @@ export const projects = [
     year: "January, 2026",
     thumbLabel: "Rain gauge placement",
     thumbnail: "assets/img/thumb-stt.jpg",
-    image: "assets/img/stt-poster.jpg",
-    bottomImage: "assets/img/stt-hypercube.jpg",
+    image: "assets/img/stt-hypercube.jpg",
+    pdf: "assets/reports/rain-gauge-placement.pdf",
+    pdfLabel: "Conference poster",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
@@ -283,9 +288,9 @@ export const projects = [
 ];
 
 export const categoryLabels = {
-  remotesensing: "Remote Sensing",
-  spatialmodelling: "Spatial Modelling",
-  geovisualization: "Geovisualization",
+  "remote-sensing": "Remote sensing",
+  "spatial-analysis": "Spatial analysis",
+  "web-mapping": "Web mapping",
 };
 
 export function getProjectById(id) {
