@@ -30,7 +30,6 @@ export const projects = [
         "IWMI DIWASA",
         "Global Hydrological Foundation Model"
       ],
-      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
@@ -63,7 +62,6 @@ export const projects = [
         "Agisoft Metashape for Orthomosaic ",
         "Mobile citizen science application (geotagging + validation)"
       ],
-      links: [{ label: "Project report (PDF)", url: "#" }],
     },
   },
   {
@@ -149,7 +147,6 @@ export const projects = [
         "Automated, reproducible ModelBuilder workflow submitted as .atbx toolbox",
       ],
       tools: ["ArcGIS Pro", "ModelBuilder", "ArcPy", "Spatial Analyst"],
-      links: [{ label: "Map report (PDF)", url: "assets/reports/pipeline-suitability.pdf" }],
     },
   },
   {
@@ -285,12 +282,69 @@ export const projects = [
       ],
     },
   },
+  {
+    id: "astrophysics1",
+    title: "Supermassive Black Hole Effects on Galaxy Properties",
+    summary:
+      "Astrophysics research poster (University of Washington) on how supermassive black holes shape their host galaxies — growth, color, and star formation — using the Romulus25 cosmological simulation. The poster tells the full story.",
+    category: "astrophysics",
+    tags: ["astrophysics", "simulation", "data analysis"],
+    year: "Undergraduate research",
+    thumbLabel: "Supermassive black hole poster",
+    thumbnail: "assets/img/thumb-astrophysics1.jpg",
+    image: "assets/img/astrophysics1-poster.jpg",
+    pdf: "assets/reports/smbh-galaxy-properties.pdf",
+    pdfLabel: "Full poster (PDF)",
+    // No geographic location — cosmological simulation work; the poster is the figure.
+    details: {
+      problem:
+        "How do supermassive black holes affect the growth and shape of their host galaxies? The relationship between black hole properties and galaxy evolution is still poorly understood.",
+      approach: [
+        "Drew a sample of 500 galaxies from the Romulus25 cosmological simulation (a 25 Mpc box).",
+        "Correlated galaxy properties with black hole properties across cosmic time, tracking color, specific star formation rate, and black hole accretion.",
+      ],
+      outcomes: [
+        "Found that galaxies separate cleanly into red and blue populations by black hole activity, consistent with black-hole-driven quenching.",
+        "Full methods, figures, and conclusions are in the poster.",
+      ],
+      tools: ["Romulus25 simulation", "Python", "Data analysis"],
+    },
+  },
+  {
+    id: "astrophysics2",
+    title: "Galaxy Quenching and Rejuvenation",
+    summary:
+      "Astrophysics research poster (University of Washington) investigating what causes galaxies to stop forming stars (quenching) and what can restart it (rejuvenation), traced through N-body cosmological simulation. The poster tells the full story.",
+    category: "astrophysics",
+    tags: ["astrophysics", "simulation", "star formation"],
+    year: "Undergraduate research",
+    thumbLabel: "Galaxy quenching poster",
+    thumbnail: "assets/img/thumb-astrophysics2.jpg",
+    image: "assets/img/astrophysics2-poster.jpg",
+    pdf: "assets/reports/galaxy-quenching-rejuvenation.pdf",
+    pdfLabel: "Full poster (PDF)",
+    // No geographic location — cosmological simulation work; the poster is the figure.
+    details: {
+      problem:
+        "What causes galaxies to quench (stop forming stars and turn 'red and dead'), and what can rejuvenate star formation afterward?",
+      approach: [
+        "Selected the 40 most massive galaxies from an N-body cosmological simulation.",
+        "Tracked each galaxy's star formation rate over time to identify when and why it dips, quenches, or rejuvenates — often via mergers and gas inflow.",
+      ],
+      outcomes: [
+        "Documented quenching pathways (merger and stripping) and rejuvenation driven by gas intake from neighboring halos.",
+        "Full case studies, figures, and conclusions are in the poster.",
+      ],
+      tools: ["N-body simulation", "Python", "Data analysis"],
+    },
+  },
 ];
 
 export const categoryLabels = {
-  "remote-sensing": "Remote sensing",
-  "spatial-analysis": "Spatial analysis",
-  "web-mapping": "Web mapping",
+  remotesensing: "Remote sensing",
+  spatialmodelling: "Spatial analysis",
+  geovisualization: "Web mapping",
+  astrophysics: "Astrophysics",
 };
 
 export function getProjectById(id) {
