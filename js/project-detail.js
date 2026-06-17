@@ -59,6 +59,17 @@ function renderProject(project) {
     </header>
 
     ${
+      project.gallery && project.gallery.length
+        ? `<div class="project-gallery">${project.gallery
+            .map(
+              (src) =>
+                `<figure class="gallery-item"><img src="${src}" alt="${project.title} — app screenshot" loading="lazy" /></figure>`
+            )
+            .join("")}</div>`
+        : ""
+    }
+
+    ${
       project.image
         ? `<figure class="project-figure">
              <img src="${project.image}" alt="${project.title}" loading="lazy" />

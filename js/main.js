@@ -268,7 +268,11 @@ function initProjectGrid() {
 }
 
 function renderProjectCard(project) {
-  const categoryLabel = categoryLabels[project.category] ?? project.category;
+  // A project may belong to one category (string) or several (array).
+  const cats = Array.isArray(project.category) ? project.category : [project.category];
+  const categoryChips = cats
+    .map((c) => `<span class="chip">${categoryLabels[c] ?? c}</span>`)
+    .join("");
   // Card thumbnail: a decorative `thumbnail` overrides the detail-page figure (`image`).
   const thumbSrc = project.thumbnail ?? project.image;
 
@@ -276,7 +280,7 @@ function renderProjectCard(project) {
     <a
       class="project-card"
       href="project.html?id=${encodeURIComponent(project.id)}"
-      data-category="${project.category}"
+      data-category="${cats.join(" ")}"
     >
       <div class="project-thumb">${
         thumbSrc
@@ -285,7 +289,7 @@ function renderProjectCard(project) {
       }</div>
       <div class="project-body">
         <div class="project-meta">
-          <span class="chip">${categoryLabel}</span>
+          ${categoryChips}
           <span class="chip chip-warm">${project.year}</span>
         </div>
         <h3>${project.title}</h3>
@@ -307,8 +311,8 @@ function initFilters() {
       buttons.forEach((btn) => btn.classList.toggle("is-active", btn === button));
 
       cards().forEach((card) => {
-        const match =
-          filter === "all" || card.dataset.category === filter;
+        const cardCats = (card.dataset.category || "").split(" ");
+        const match = filter === "all" || cardCats.includes(filter);
         card.style.display = match ? "" : "none";
       });
     });

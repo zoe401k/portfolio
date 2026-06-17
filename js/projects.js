@@ -38,12 +38,18 @@ export const projects = [
     title: "Invasive Species Monitoring with Remote Detection and Citizen Science Validation",
     summary:
       "This project combines UAV imagery, machine learning, and citizen science to detect and monitor invasive plant species in the Groenlo (Achterhoek) region. It supports municipal biodiversity management by enabling early detection, validation, and mapping of invasive species through an interactive public application.",
-    category: "remotesensing",
+    category: ["remotesensing", "databases"],
     tags: ["invasive species", "UAV", "citizen science"],
     year: "April, 2026",
     thumbLabel: "Invasive species map preview",
     thumbnail: "assets/img/thumb-idhv.jpg",
-    location: { lat: 52.0400, lng: 6.6200, zoom: 11 }, 
+    // Live demo is a Streamlit app; the screenshots showcase it better than the link.
+    gallery: [
+      "assets/img/idhv-app-2.jpg",
+      "assets/img/idhv-app-3.jpg",
+      "assets/img/idhv-app-1.jpg",
+    ],
+    location: { lat: 52.0400, lng: 6.6200, zoom: 11 },
     details: {
       problem:
         "Invasive plant species in the Netherlands are increasing in distribution and ecological impact, threatening native biodiversity and increasing management costs for municipalities. In the Oost Gelre (Groenlo) region, limited monitoring capacity and expensive ground surveys make it difficult to consistently detect and track invasive species across large areas.",
@@ -69,7 +75,7 @@ export const projects = [
     title: "Database for Exoplanet Analysis",
     summary:
       " Data for exoplanets and their solar systems are gathered by a variety of institutions by a wide range of methods. The data is then compiled for NASA but is unorganized and hard to read. A well-functioning, readable database is necessary for proper analysis of the exoplanets to draw meaningful scientific conclusions from decades of accumulated data.",
-    category: "spatialmodelling",
+    category: "databases",
     tags: ["Database Management", "Habitability Analysis", "SQL"],
     year: "February, 2026",
     thumbLabel: "Exoplanet database",
@@ -344,6 +350,7 @@ export const categoryLabels = {
   remotesensing: "Remote sensing",
   spatialmodelling: "Spatial analysis",
   geovisualization: "Web mapping",
+  databases: "Databases",
   astrophysics: "Astrophysics",
 };
 

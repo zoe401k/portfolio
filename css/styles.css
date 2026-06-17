@@ -295,6 +295,27 @@ code {
   background: var(--bg-alt);
 }
 
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.project-gallery .gallery-item {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.project-gallery .gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .project-embed {
   margin: 0;
   border-radius: var(--radius);
