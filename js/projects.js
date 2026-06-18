@@ -109,9 +109,9 @@ export const projects = [
     year: "January, 2026",
     thumbLabel: "Rain gauge placement",
     thumbnail: "assets/img/thumb-stt.jpg",
-    image: "assets/img/stt-hypercube.jpg",
-    pdf: "assets/reports/rain-gauge-placement.pdf",
-    pdfLabel: "Conference poster",
+    image: "assets/img/stt-poster.jpg",
+    pdf: "assets/img/stt-hypercube.jpg",
+    pdfLabel: "Workflow",
     location: { lat: -1.8312, lng: -78.1834, zoom: 7 },
     details: {
       problem:
