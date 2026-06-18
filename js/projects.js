@@ -351,7 +351,7 @@ export const categoryLabels = {
   spatialmodelling: "Spatial analysis",
   geovisualization: "Geovisualization",
   databases: "Databases",
-  /*astrophysics: "Astrophysics",*/
+  astrophysics: "Astrophysics",
 };
 
 export function getProjectById(id) {
