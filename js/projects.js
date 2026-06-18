@@ -349,9 +349,9 @@ export const projects = [
 export const categoryLabels = {
   remotesensing: "Remote sensing",
   spatialmodelling: "Spatial analysis",
-  geovisualization: "Web mapping",
+  geovisualization: "Geovisualization",
   databases: "Databases",
-  astrophysics: "Astrophysics",
+  /*astrophysics: "Astrophysics",*/
 };
 
 export function getProjectById(id) {
