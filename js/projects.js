@@ -4,7 +4,7 @@ export const projects = [
     id: "ACT",
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
-      "This project calculates groundwater abstraction via remote sensing at field and aquifer scale in Morocco by combining evapotranspiration data, crop classification, and parcel-level analysis. It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",
+      "This project calculates groundwater abstraction via remote sensing at field and aquifer scale in Morocco by combining evapotranspiration data, crop classification, and parcel-level analysis." /* It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",*/
     category: "remotesensing",
     tags: ["groundwater", "remote sensing", "water balance"],
     year: "June, 2026",
@@ -15,19 +15,18 @@ export const projects = [
       problem:
         "Morocco is experiencing severe water stress due to prolonged droughts and rapid groundwater depletion driven by expanding agricultural irrigation. Limited data sharing and sensitive water governance issues make it difficult to accurately monitor and manage groundwater abstraction at scale.",
       approach:
-        "The project integrates ESA WorldCereal crop classification, Fields of the World parcel extraction, and high-resolution evapotranspiration data to estimate field-level water use. Field survey data from RESING is used as ground truth. Water balance modelling combines ET, rainfall effectiveness, irrigation efficiency, and water allocation (groundwater and dam sources), which is then aggregated from parcel to aquifer level. IWMI tools (DIWASA and Global Hydrological Foundation Model) are evaluated for additional insight.",
+        "Confidential",
       outcomes: [
-        "Mapped irrigated agriculture and crop-specific groundwater use hotspots at field scale across Moroccan aquifers",
-        "Built an upscaled water balance model from parcel to aquifer level to support groundwater monitoring and governance decisions",
-        "Developed a prototype dashboard for visualizing agricultural water use and abstraction patterns"
+        /*"Mapped irrigated agriculture and crop-specific groundwater use hotspots at field scale across Moroccan aquifers",
+        "Built an upscaled water balance model from parcel to aquifer level to support groundwater monitoring and governance decisions",*/
+        "Developed a dashboard for visualizing agricultural water use and abstraction patterns"
       ],
       tools: [
-        "ESA WorldCereal",
-        "Fields of the World",
-        "eLEAF evapotranspiration data",
+      
+
         "QGIS / Python",
         "Tableau Public",
-        "IWMI DIWASA",
+        
         "Global Hydrological Foundation Model"
       ],
     },
