@@ -4,7 +4,7 @@ export const projects = [
     id: "ACT",
     title: "Ground Water Abstraction Calculations in Morocco",
     summary:
-      "This project calculates groundwater abstraction via remote sensing at field and aquifer scale in Morocco by combining evapotranspiration data, crop classification, and parcel-level analysis." /* It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",*/
+      "This project calculates groundwater abstraction via remote sensing at field and aquifer scale in Morocco by combining evapotranspiration data, crop classification, and parcel-level analysis." /* It supports better water governance by identifying irrigation water use hotspots under increasing drought pressure.",*/,
     category: "remotesensing",
     tags: ["groundwater", "remote sensing", "water balance"],
     year: "June, 2026",
@@ -17,17 +17,16 @@ export const projects = [
       approach:
         "Confidential",
       outcomes: [
-        /*"Mapped irrigated agriculture and crop-specific groundwater use hotspots at field scale across Moroccan aquifers",
-        "Built an upscaled water balance model from parcel to aquifer level to support groundwater monitoring and governance decisions",*/
-        "Developed a dashboard for visualizing agricultural water use and abstraction patterns"
+        //Mapped irrigated agriculture and crop-specific groundwater use hotspots at field scale across Moroccan aquifers",
+        //"Built an upscaled water balance model from parcel to aquifer level to support groundwater monitoring and governance decisions",*/
+        "Developed a dashboard for visualizing agricultural water use and abstraction patterns",
       ],
       tools: [
-      
+
 
         "QGIS / Python",
         "Tableau Public",
-        
-        "Global Hydrological Foundation Model"
+        "Global Hydrological Foundation Model",
       ],
     },
   },
